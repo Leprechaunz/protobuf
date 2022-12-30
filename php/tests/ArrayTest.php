@@ -39,7 +39,7 @@ class ArrayTest extends TestBase
         $arr[] = MAX_INT32_STRING;
         $this->assertSame(MAX_INT32, $arr[7]);
 
-        $this->assertEquals(8, count($arr));
+        $this->assertCount(8, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = 0;
@@ -114,7 +114,7 @@ class ArrayTest extends TestBase
         $arr[] = MIN_UINT32_STRING;
         $this->assertSame(MIN_UINT32, $arr[11]);
 
-        $this->assertEquals(12, count($arr));
+        $this->assertCount(12, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = 0;
@@ -185,7 +185,7 @@ class ArrayTest extends TestBase
         }
 
 
-        $this->assertEquals(7, count($arr));
+        $this->assertCount(7, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = 0;
@@ -297,17 +297,17 @@ class ArrayTest extends TestBase
 
         // Test append.
         $arr[] = 1;
-        $this->assertFloatEquals(1.0, $arr[0], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.0, $arr[0], MAX_FLOAT_DIFF);
 
         $arr[] = 1.1;
-        $this->assertFloatEquals(1.1, $arr[1], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.1, $arr[1], MAX_FLOAT_DIFF);
 
         $arr[] = '2';
-        $this->assertFloatEquals(2.0, $arr[2], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(2.0, $arr[2], MAX_FLOAT_DIFF);
         $arr[] = '3.1';
-        $this->assertFloatEquals(3.1, $arr[3], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(3.1, $arr[3], MAX_FLOAT_DIFF);
 
-        $this->assertEquals(4, count($arr));
+        $this->assertCount(4, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = 0;
@@ -316,15 +316,15 @@ class ArrayTest extends TestBase
 
         // Test set.
         $arr[0] = 1;
-        $this->assertFloatEquals(1.0, $arr[0], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.0, $arr[0], MAX_FLOAT_DIFF);
 
         $arr[1] = 1.1;
-        $this->assertFloatEquals(1.1, $arr[1], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.1, $arr[1], MAX_FLOAT_DIFF);
 
         $arr[2] = '2';
-        $this->assertFloatEquals(2.0, $arr[2], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(2.0, $arr[2], MAX_FLOAT_DIFF);
         $arr[3] = '3.1';
-        $this->assertFloatEquals(3.1, $arr[3], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(3.1, $arr[3], MAX_FLOAT_DIFF);
     }
 
     #########################################################
@@ -337,17 +337,17 @@ class ArrayTest extends TestBase
 
         // Test append.
         $arr[] = 1;
-        $this->assertFloatEquals(1.0, $arr[0], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.0, $arr[0], MAX_FLOAT_DIFF);
 
         $arr[] = 1.1;
-        $this->assertFloatEquals(1.1, $arr[1], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.1, $arr[1], MAX_FLOAT_DIFF);
 
         $arr[] = '2';
-        $this->assertFloatEquals(2.0, $arr[2], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(2.0, $arr[2], MAX_FLOAT_DIFF);
         $arr[] = '3.1';
-        $this->assertFloatEquals(3.1, $arr[3], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(3.1, $arr[3], MAX_FLOAT_DIFF);
 
-        $this->assertEquals(4, count($arr));
+        $this->assertCount(4, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = 0;
@@ -356,15 +356,15 @@ class ArrayTest extends TestBase
 
         // Test set.
         $arr[0] = 1;
-        $this->assertFloatEquals(1.0, $arr[0], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.0, $arr[0], MAX_FLOAT_DIFF);
 
         $arr[1] = 1.1;
-        $this->assertFloatEquals(1.1, $arr[1], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(1.1, $arr[1], MAX_FLOAT_DIFF);
 
         $arr[2] = '2';
-        $this->assertFloatEquals(2.0, $arr[2], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(2.0, $arr[2], MAX_FLOAT_DIFF);
         $arr[3] = '3.1';
-        $this->assertFloatEquals(3.1, $arr[3], MAX_FLOAT_DIFF);
+        $this->assertEqualsWithDelta(3.1, $arr[3], MAX_FLOAT_DIFF);
     }
 
     #########################################################
@@ -388,7 +388,7 @@ class ArrayTest extends TestBase
         $arr[] = '';
         $this->assertSame(false, $arr[3]);
 
-        $this->assertEquals(4, count($arr));
+        $this->assertCount(4, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = 0;
@@ -430,7 +430,7 @@ class ArrayTest extends TestBase
         $arr[] = true;
         $this->assertSame('1', $arr[3]);
 
-        $this->assertEquals(4, count($arr));
+        $this->assertCount(4, $arr);
 
         for ($i = 0; $i < count($arr); $i++) {
             $arr[$i] = '';
@@ -465,7 +465,7 @@ class ArrayTest extends TestBase
         $arr[] = $sub_m;
         $this->assertSame(1, $arr[0]->getA());
 
-        $this->assertEquals(1, count($arr));
+        $this->assertCount(1, $arr);
 
         // Test set.
         $sub_m = new Sub();
